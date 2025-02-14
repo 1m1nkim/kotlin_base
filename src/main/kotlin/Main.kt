@@ -63,11 +63,13 @@ fun add(a: Int, b: Int): Int{
     return a+b
 }
 
-class Person(val name: String, age: Int){
+class Person(val name: String, age: Int){// 주생성자
     init {
         println("Person 객체 생성 : $name, $age")
+        //주 생성자 생성 이후 init 즉, 메인에서 생성 후 후처리를 위함
     }
-    //주 생성자 생성 이후 init 즉, 메인에서 생성 후 후처리를 위함
+    constructor(name: String) : this(name, 0)
+    //부 생성자,
     fun greet(){
         println("Hello My name is $name")
     }
