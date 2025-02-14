@@ -63,7 +63,11 @@ fun add(a: Int, b: Int): Int{
     return a+b
 }
 
-class Person(val name: String){
+class Person(val name: String, age: Int){
+    init {
+        println("Person 객체 생성 : $name, $age")
+    }
+    //주 생성자 생성 이후 init 즉, 메인에서 생성 후 후처리를 위함
     fun greet(){
         println("Hello My name is $name")
     }
@@ -99,7 +103,7 @@ class PersonPrivate{
 //만약 name이 널일경우 코틀린에선 ?
 
 class PersonNameNull(
-    private var _name:String
+    private var _name:String    //내부 변수
 ){
     var name:String
         get(){
@@ -109,7 +113,7 @@ class PersonNameNull(
             return _name
         }
         set(value){
-            require(value.isNotEmpty()){
+            require(value.isNotEmpty()){ // << requried는 throw와 비슷
                 "이름은 null일 수 없다."
             }
             _name = value
