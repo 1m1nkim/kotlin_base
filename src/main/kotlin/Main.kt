@@ -72,3 +72,12 @@ class Person(val name: String){
 fun sayHello(name: String, age: Int = 100){
     println("Hello, $name")
 }
+
+class Child{
+    companion object: SuperClass(){
+    }
+}
+
+open class SuperClass{
+    fun greet() = println("Hello")
+}
