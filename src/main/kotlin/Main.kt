@@ -92,4 +92,26 @@ class PersonPrivate{
     //var name: String
         //get() = throw IllegalAccessException("읽기 금지") //setter를 만드려면 getter를 무조건 만들어야 해서 예외처리함
         //set(value){_name = value} // 가상의 값으로 변수 대입
+
+
+}
+
+//만약 name이 널일경우 코틀린에선 ?
+
+class PersonNameNull(
+    private var _name:String
+){
+    var name:String
+        get(){
+            if(_name.isEmpty()){
+                throw IllegalStateException("이름이 설정되지 않았습니다.")
+            }
+            return _name
+        }
+        set(value){
+            require(value.isNotEmpty()){
+                "이름은 null일 수 없다."
+            }
+            _name = value
+        }
 }
