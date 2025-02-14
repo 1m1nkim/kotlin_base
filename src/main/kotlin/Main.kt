@@ -67,6 +67,8 @@ class Person(val name: String, age: Int){// 주생성자
     init {
         println("Person 객체 생성 : $name, $age")
         //주 생성자 생성 이후 init 즉, 메인에서 생성 후 후처리를 위함
+        require(age >= 0) {"나이는 0 이상"}
+        check(name.isNotEmpty()){"이름은 비어있지 않아야함"}
     }
     constructor(name: String) : this(name, 0)
     //부 생성자,
