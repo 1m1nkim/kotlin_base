@@ -81,3 +81,15 @@ class Child{
 open class SuperClass{
     fun greet() = println("Hello")
 }
+
+class PersonPrivate{
+    // private val name:String ="Unknown" // 외부에서 읽기나 변경할 수 없음
+    // private String name:String ="Unknown" // 둘 다 똑같음
+
+    // val name: String = "Unknown" // private 제거 시 Getter만 사용할 수 있음
+
+    //private var _name: String = "Unknown" // 내부 변수, 변수처럼 작동하는 함수
+    //var name: String
+        //get() = throw IllegalAccessException("읽기 금지") //setter를 만드려면 getter를 무조건 만들어야 해서 예외처리함
+        //set(value){_name = value} // 가상의 값으로 변수 대입
+}
